@@ -3,10 +3,18 @@
 
 /* key color
 ===============================================*/
-$main: #e3b6a1;
-$accent: #e55258;
-$text: #707070;
-$white: #fff;
+$color-main: #e3b6a1;
+$color-accent: #e55258;
+$color-text: #707070;
+$color-white: #fff;
+
+/* extend
+===============================================*/
+%title {
+  font-size: 4.6rem;
+  text-align: center;
+  margin-bottom: 80px;
+}
 
 
 /* 全体
@@ -16,15 +24,16 @@ html {
 }
 body {
   font-family: 'Lato','Helvetica',YuGothic,'Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
-  color: $text;
+  color: $color-text;
   font-size: 1.6em;
   line-height: 1.6;
 }
 a {
-  color: $text;
+  color: $color-text;
 }
 img {
   display: block;
+  width: 100%;
 }
 .dn {
   display: none;
@@ -37,10 +46,14 @@ img {
 /* header
 ===============================================*/
 .header {
+  position: fixed;
+  width: 100%;
+  background-color: $color-white;
+  z-index: 9999;
   &-nav {
     width: 100%;
     max-width: 1200px;
-    margin-top: 90px;
+    margin-top: 40px;
     margin-bottom: 36px;
     &__drawer {
       display: none;
@@ -51,6 +64,49 @@ img {
     }
     &__item {
       margin-right: 20px;
+    }
+  }
+}
+
+/* main
+===============================================*/
+.main {
+  &-hero {
+    background-color: $color-main;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    &__logo {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      transform: translateY(-50%);
+      width: 100%;
+      max-width: 480px;
+    }
+    &__name {
+      width: 100%;
+      margin: 0 auto 50px;
+    }
+    &__line {
+      width: 180px;
+      margin: 0 auto;
+    }
+  }
+  &-inner {
+    width: calc(100% - 30px);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  &-about {
+    margin-top: 200px;
+    margin-bottom: 200px;
+    &__title {
+      @extend %title;
+    }
+    &__image {
+      widows: 100%;
+      max-width: 360px;
     }
   }
 }
