@@ -1,6 +1,29 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap');
 
+
+// ==========================================================================
+// 各種変数設定
+// ==========================================================================
+
+/* breakpoint
+===============================================*/
+// mobile first
+$breakpoints-min: ( 
+  'sm': 'screen and (min-width: 576px),print',
+  'md': 'screen and (min-width: 768px),print',
+  'lg': 'screen and (min-width: 1024px),print',
+  'xl': 'screen and (min-width: 1200px),print',
+) !default;
+
+// pc first
+$breakpoints-max: ( 
+  'sm': 'screen and (max-width: 575px),print',
+  'md': 'screen and (max-width: 767px),print',
+  'lg': 'screen and (max-width: 1023px),print',
+  'xl': 'screen and (max-width: 1200px),print',
+) !default;
+
 /* key color
 ===============================================*/
 $color-main: #e3b6a1;
@@ -8,7 +31,49 @@ $color-accent: #e55258;
 $color-text: #707070;
 $color-white: #fff;
 
-/* extend
+/* font
+===============================================*/
+$_font-en:'Lato','Helvetica',"游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, sans-serif !default;
+$_font-ja:"游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, typesquare, sans-serif !default;
+
+
+// ==========================================================================
+// mixin設定
+// ==========================================================================
+
+/* media query (mobile first)
+// 引数$breakpointに渡された値をブレイクポイントにしたmedia query設定を出力する（モバイルファースト）
+===============================================*/
+@mixin mq-min($breakpoint: md) {
+	@media #{map-get($breakpoints-min, $breakpoint)} {
+		@content;
+	}
+}
+
+/* media query (pc first)
+// 引数$breakpointに渡された値をブレイクポイントにしたmedia query設定を出力する（PCファースト）
+===============================================*/
+@mixin mq-max($breakpoint: md) {
+	@media #{map-get($breakpoints-max, $breakpoint)} {
+		@content;
+	}
+}
+
+/* media query (for IE11)
+// IE用
+===============================================*/
+@mixin mq-ie() {
+	@media screen and (-ms-high-contrast: none) {
+		@content;
+	}
+}
+
+
+// ==========================================================================
+// extend設定
+// ==========================================================================
+
+/* title
 ===============================================*/
 %title {
   font-size: 4.6rem;
@@ -17,13 +82,17 @@ $color-white: #fff;
 }
 
 
+// ==========================================================================
+// css設定
+// ==========================================================================
+
 /* 全体
 ===============================================*/
 html {
   font-size: 62.5%;
 }
 body {
-  font-family: 'Lato','Helvetica',YuGothic,'Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
+  font-family: $_font-ja;
   color: $color-text;
   font-size: 1.6em;
   line-height: 1.6;
@@ -35,12 +104,21 @@ img {
   display: block;
   width: 100%;
 }
-.dn {
-  display: none;
-}
 .inview-fade {
 	opacity: 0;
 	transition: opacity 2s;
+}
+.dn{display: none !important;}
+.di{display: inline !important;}
+.dib{display: inline-block !important;}
+.db{display: block !important;}
+@each $display in map-keys($breakpoints-min){
+	@include mq-min($display){
+		.dn-#{$display}{display: none !important;}
+		.di-#{$display}{display: inline !important;}
+		.dib-#{$display}{display: inline-block !important;}
+		.db-#{$display}{display: block !important;}
+	}
 }
 
 /* header
@@ -104,9 +182,69 @@ img {
     &__title {
       @extend %title;
     }
+    &__element {
+      position: relative;
+    }
     &__image {
-      widows: 100%;
-      max-width: 360px;
+      width: 100%;
+      max-width: 300px;
+      position: absolute;
+      z-index: 1;
+    }
+    &__profile {
+      position: relative;
+      width: calc(100% - 200px);
+      max-width: 1000px;
+      background-color: $color-main;
+      top: 70px;
+      left: 200px;
+      padding: 50px 70px 50px 150px;
+      box-sizing: border-box;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      color: $color-white;
+    }
+    &__name {
+      font-size: 3.2rem;
+      line-height: 1;
+      // letter-spacing: em;
+      // text-indent: em;
+      text-align: justify;
+      text-justify: inter-ideograph;
+      font-weight: normal;
+      font-style: normal;
+      font-family: $_font-en;
+      margin-bottom: 40px;
+      span {
+        font-size: 2rem;
+        // line-height: ;
+        // letter-spacing: em;
+        // text-indent: em;
+        text-align: justify;
+        text-justify: inter-ideograph;
+        font-weight: normal;
+        font-style: normal;
+        font-family: $_font-ja;
+        vertical-align: top;
+      }
+    }
+    &__snslist {
+      display: flex;
+    }
+    &__snsitem {
+      width: 46px;
+      margin-right: 20px;
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+    &__text {
+      width: 100%;
+      margin-bottom: 20px;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
   }
 }
