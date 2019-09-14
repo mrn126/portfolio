@@ -41,6 +41,8 @@
     </div>
     <div class="main-hero__bg"></div>
   </div>
+
+  <!-- inner -->
   <div class="main-inner">
 
     <!-- about 自己紹介 -->
@@ -136,10 +138,42 @@
           <li class="main-works__item"><a href="works/03.html" class="main-works__link"><span class="hover-event"></span><img src="images/img03.png" alt="実績03"></a></li>
         </ul>
     </section>
-  </div>
+
+    <!-- contact お問合わせ -->
+    <section id="contact" class="main-contact">
+      <h2 class="main-contact__title">お問合わせ</h2>
+      <form action="">
+        <div class="main-contact__wrap">
+          <div class="main-contact__block">
+            <div class="main-contact__item">
+              <label for="name" class="main-contact__head">お名前</label>
+              <input id="name" type="text" name="name" class="main-contact__form main-contact__form_name" placeholder="お名前" required>
+            </div>
+            <div class="main-contact__item">
+              <label for="mail" class="main-contact__head">メールアドレス</label>
+              <input id="mail" type="email" name="mail" class="main-contact__form main-contact__form_mail" placeholder="sample@gmail.com">
+            </div>
+          </div>
+          <div class="main-contact__block">
+            <div class="main-contact__item">
+              <label for="message" class="main-contact__head">メッセージ</label>
+              <textarea id="message" name="message" class="main-contact__form main-contact__form_message"></textarea>
+            </div>
+          </div>
+        </div>
+        <p class="main-contact-btnarea">
+          <input type="submit" class="main-contact__btn" value="送信">
+        </p>
+      </form>
+    </section>
+
+  </div><!-- /inner end -->
 </main>
+
+<!-- footer -->
 <footer>
 
 </footer>
+
 </body>
 </html>

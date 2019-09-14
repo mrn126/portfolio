@@ -17,8 +17,8 @@
 ===============================================*/
 /* title
 ===============================================*/
-.main-about__title, .main-skills__title, .main-works__title {
-  font-size: 4rem;
+.main-about__title, .main-skills__title, .main-works__title, .main-contact__title {
+  font-size: 3.6rem;
   text-align: center;
   margin-bottom: 80px;
 }
@@ -163,6 +163,7 @@ img {
   /* about 自己紹介 */
   /* skills できること */
   /* works 制作一覧 */
+  /* contact お問合わせ */
 }
 
 .main-hero {
@@ -439,4 +440,82 @@ img {
     transform: translate(-50%, -50%);
     color: #fff;
   }
+}
+
+.main-contact {
+  margin-bottom: 200px;
+}
+
+.main-contact__wrap {
+  margin-bottom: 50px;
+}
+
+@media screen and (min-width: 1024px), print {
+  .main-contact__wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.main-contact__block {
+  width: 100%;
+}
+
+@media screen and (min-width: 1024px), print {
+  .main-contact__block {
+    flex-basis: calc((100% / 2) - 15px - .01px);
+    max-width: calc((100% / 2) - 15px - .01px);
+    margin-right: 15px;
+  }
+  .main-contact__block:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.main-contact__item input, .main-contact__item textarea {
+  font-size: 1.6rem;
+}
+
+.main-contact__item input {
+  height: 50px;
+}
+
+.main-contact__item textarea {
+  height: 150px;
+}
+
+.main-contact__head {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.main-contact__form {
+  border: 1px solid #707070;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 1024px), print {
+  .main-contact__form_mail, .main-contact__form_message {
+    margin-bottom: 0;
+  }
+}
+
+.main-contact__btn {
+  display: block;
+  font-size: 1.8rem;
+  text-align: center;
+  color: #fff;
+  background-color: #e55258;
+  padding: 5px 50px;
+  border-radius: 5px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.main-contact input:focus,
+.main-contact textarea:focus {
+  border: 2px solid #e55258;
 }
