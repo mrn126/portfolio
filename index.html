@@ -5,14 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>ポートフォリオ | Marina Toida</title>
-  <!-- reset.css -->
   <link rel="stylesheet" href="css/reset.css">
-  <!-- style.css -->
   <link rel="stylesheet" href="css/style.css">
-  <!-- jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 </head>
 <body>
+
+<!-- header -->
 <header class="header">
   <nav id="navigation" class="header-nav">
 		<div class="header-nav__drawer drawer">
@@ -25,12 +24,16 @@
 		<ul class="header-nav__list menu">
 			<li class="header-nav__item"><a href="#about">自己紹介</a>
 			<li class="header-nav__item"><a href="#skills">できること</a>
-			<li class="header-nav__item"><a href="#works">制作実績</a>
+			<li class="header-nav__item"><a href="#works">制作一覧</a>
 			<li class="header-nav__item"><a href="#contact">お問合わせ</a></li>
 		</ul>
 	</nav>
 </header>
+
+<!-- main -->
 <main class="main">
+
+  <!-- mainvisual -->
   <div class="main-hero">
     <div class="main-hero__logo">
       <h1 class="main-hero__name"><img src="images/logo.png" alt="MARINA TOIDA"></h1>
@@ -39,6 +42,8 @@
     <div class="main-hero__bg"></div>
   </div>
   <div class="main-inner">
+
+    <!-- about 自己紹介 -->
     <section id="about" class="main-about">
       <h2 class="main-about__title">自己紹介</h2>
       <div class="main-about__element">
@@ -48,15 +53,88 @@
         <div class="main-about__profile">
           <p class="main-about__name"><span>Webデザイナー兼コーダー</span><br>Marina Toida</p>
           <ul class="main-about__snslist">
-            <li class="main-about__snsitem"><a href="#twitter" target="_blank"><img src="images/logo_twitter.png" alt="twitter"></a></li>
-            <li class="main-about__snsitem"><a href="#facebook" target="_blank"><img src="images/logo_facebook.png" alt="facebook"></a></li>
-            <li class="main-about__snsitem"><a href="#github" target="_blank"><img src="images/logo_github.png" alt="github"></a></li>
+            <li class="main-about__snsitem"><a href="#twitter" target="_blank"><img src="images/icon_twitter.png" alt="twitter"></a></li>
+            <li class="main-about__snsitem"><a href="#facebook" target="_blank"><img src="images/icon_facebook.png" alt="facebook"></a></li>
+            <li class="main-about__snsitem"><a href="#github" target="_blank"><img src="images/icon_github.png" alt="github"></a></li>
           </ul>
           <p class="main-about__text">茨城県出身。現在は都内のWeb制作会社で派遣社員として働いています。</p>
           <p class="main-about__text">▼ 主に経験してきた業務（1年9ヶ月ほど）<br>Webサイトのコーディング（新規・流用・更新）、 HTMLメルマガのデザイン・コーディング、バナー制作等<br>※具体的なスキルは下記ご確認ください。</p>
           <p class="main-about__text">▼ だいすきなもの<br>音楽、お酒、そとあそび、ミニマリズム</p>
         </div>
       </div>
+    </section>
+
+    <!-- skills できること -->
+    <section id="skills" class="main-skills">
+      <h2 class="main-skills__title">できること</h2>
+      <div class="main-skills__block">
+        <div class="main-skills__box">
+          <table class="main-skills__table">
+            <tr class="main-skills__list">
+              <td class="main-skills__item">HTML / CSS</td>
+              <td class="main-skills__level">★★★★☆</td>
+            </tr>
+            <tr class="main-skills__list">
+              <td class="main-skills__item">EJS / Sass</td>
+              <td class="main-skills__level">★★★★☆</td>
+            </tr>
+            <tr class="main-skills__list">
+              <td class="main-skills__item">JavaScript / jQuery</td>
+              <td class="main-skills__level">★★★☆☆</td>
+            </tr>
+            <tr class="main-skills__list">
+              <td class="main-skills__item">WordPress</td>
+              <td class="main-skills__level">★☆☆☆☆</td>
+            </tr>
+            <tr class="main-skills__list">
+              <td class="main-skills__item">Git</td>
+              <td class="main-skills__level">★★★★☆</td>
+            </tr>
+          </table>
+        </div>
+        <div class="main-skills__wrap">
+            <p class="main-skills__icon"><img src="images/skills_img01.png" alt=""></p>
+          <p class="main-skills__text">PC・タブレット・スマホ用とレスポンシブ対応のWebサイト制作ができます。アニメーションを入れる等、動きをつけることも可能です。<br>
+            現在お持ちのWebサイトの運用・更新から、新規ページ制作も対応できます。新規で制作する際は、今後更新しやすいような制作を心がけてまいります。<br>
+            サイト制作におけるバージョン管理ツールはGitで管理することができます。</p>
+        </div>
+      </div>
+      <div class="main-skills__block">
+          <div class="main-skills__box">
+            <table class="main-skills__table">
+              <tr class="main-skills__list">
+                <td class="main-skills__item">Photoshop</td>
+                <td class="main-skills__level">★★★★☆</td>
+              </tr>
+              <tr class="main-skills__list">
+                <td class="main-skills__item">Illustrator</td>
+                <td class="main-skills__level">★★★☆☆</td>
+              </tr>
+              <tr class="main-skills__list">
+                <td class="main-skills__item">XD</td>
+                <td class="main-skills__level">★★☆☆☆</td>
+              </tr>
+            </table>
+          </div>
+          <div class="main-skills__wrap">
+            <p class="main-skills__icon"><img src="images/skills_img02.png" alt=""></p>
+            <p class="main-skills__text">HTMLメルマガのデザインを一から制作してきた経験があります。公式サイトのトンマナに合わせたデザイン、バナー制作ができます。また、Photoshopを使った画像加工も可能です。<br>
+              Adobe XDを使用し、ワイヤーフレームの制作から対応できます。<br>
+              （当サイトはXDでワイヤーフレームからデザインまで自身で制作しています）</p>
+          </div>
+        </div>
+    </section>
+
+    <!-- works 制作一覧 -->
+    <section id="works" class="main-works">
+        <h2 class="main-works__title">制作一覧</h2>
+        <ul class="main-works__list">
+          <li class="main-works__item"><a href="works/01.html" class="main-works__link"><span class="hover-event"></span><img src="images/img01.png" alt="実績01"></a></li>
+          <li class="main-works__item"><a href="works/02.html" class="main-works__link"><span class="hover-event"></span><img src="images/img02.png" alt="実績02"></a></li>
+          <li class="main-works__item"><a href="works/03.html" class="main-works__link"><span class="hover-event"></span><img src="images/img03.png" alt="実績03"></a></li>
+          <li class="main-works__item"><a href="works/03.html" class="main-works__link"><span class="hover-event"></span><img src="images/img03.png" alt="実績03"></a></li>
+          <li class="main-works__item"><a href="works/03.html" class="main-works__link"><span class="hover-event"></span><img src="images/img03.png" alt="実績03"></a></li>
+        </ul>
     </section>
   </div>
 </main>
