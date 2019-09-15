@@ -358,6 +358,50 @@ img {
       @include mq-min(lg){
         &::before,
         &::after {
+          opacity: 0;
+          transition: opacity .5s;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          display: block;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(#000, .6);
+        }
+        &::after {
+          content: "詳しく見る";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: $color-white;
+        }
+        &:hover {
+          &::before,
+          &::after {
+            opacity: 1;
+          }
+          span {
+            &::before,
+            &::after {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+    &__arrow {
+      width: 50px;
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translateX(-50%);
+      @include mq-min(lg){
+        &::before,
+        &::after {
           content: "";
           display: block;
           position: absolute;
@@ -367,48 +411,16 @@ img {
           transition: opacity .5s;
         }
         &::before {
-          width: 50px;
+          width: 52px;
           height: 1px;
-          top: 60%;
-          left: 50%;
-          transform: translateX(-50%);
           z-index: 1;
         }
         &::after {
           width: 1px;
           height: 10px;
-          top: 57.2%;
-          left: 57%;
+          top: -8px;
+          right: 0;
           transform: rotate(-45deg);
-        }
-        &:hover {
-          &:before,
-          &:after {
-            opacity: 1;
-          }
-          span {
-            opacity: 1;
-          }
-        }
-      }
-      span {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: rgba(#000, .6);
-        opacity: 0;
-        transition: opacity .5s;
-        @include mq-min(lg){
-          &::after{
-            content: "詳しく見る";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: $color-white;
-          }
         }
       }
     }

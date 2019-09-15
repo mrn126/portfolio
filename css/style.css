@@ -398,6 +398,45 @@ img {
 
 @media screen and (min-width: 1024px), print {
   .main-works__link::before, .main-works__link::after {
+    opacity: 0;
+    transition: opacity .5s;
+  }
+  .main-works__link::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  .main-works__link::after {
+    content: "詳しく見る";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+  }
+  .main-works__link:hover::before, .main-works__link:hover::after {
+    opacity: 1;
+  }
+  .main-works__link:hover span::before, .main-works__link:hover span::after {
+    opacity: 1;
+  }
+}
+
+.main-works__arrow {
+  width: 50px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media screen and (min-width: 1024px), print {
+  .main-works__arrow::before, .main-works__arrow::after {
     content: "";
     display: block;
     position: absolute;
@@ -406,48 +445,17 @@ img {
     opacity: 0;
     transition: opacity .5s;
   }
-  .main-works__link::before {
-    width: 50px;
+  .main-works__arrow::before {
+    width: 52px;
     height: 1px;
-    top: 60%;
-    left: 50%;
-    transform: translateX(-50%);
     z-index: 1;
   }
-  .main-works__link::after {
+  .main-works__arrow::after {
     width: 1px;
     height: 10px;
-    top: 57.2%;
-    left: 57%;
+    top: -8px;
+    right: 0;
     transform: rotate(-45deg);
-  }
-  .main-works__link:hover:before, .main-works__link:hover:after {
-    opacity: 1;
-  }
-  .main-works__link:hover span {
-    opacity: 1;
-  }
-}
-
-.main-works__link span {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  opacity: 0;
-  transition: opacity .5s;
-}
-
-@media screen and (min-width: 1024px), print {
-  .main-works__link span::after {
-    content: "詳しく見る";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
   }
 }
 
