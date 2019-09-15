@@ -76,9 +76,13 @@ $_font-ja:"游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, typesq
 /* title
 ===============================================*/
 %title {
-  font-size: 3.6rem;
+  font-size: 2.4rem;
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
+  @include mq-min(lg){
+    font-size: 3.6rem;
+    margin-bottom: 80px;
+  }
 }
 
 
@@ -214,7 +218,9 @@ img {
       @include mq-min(lg){
         display: flex;
         justify-content: flex-end;
-        text-align: left;
+        width: 100%;
+        position: relative;
+        padding: 0;
       }
     }
     &__item {
@@ -222,8 +228,13 @@ img {
       margin-bottom: 30px;
       @include mq-min(lg){
         margin-right: 20px;
+        margin-bottom: 0;
+        transition: opacity .3s;
         &:last-of-type {
           margin-right: 0;
+        }
+        &:hover {
+          opacity: .6;
         }
       }
     }
@@ -242,18 +253,30 @@ img {
     &__logo {
       position: absolute;
       top: 50%;
-      left: 10%;
-      transform: translateY(-50%);
-      width: 100%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
       max-width: 480px;
+      @include mq-min(lg){
+        top: 50%;
+        left: 10%;
+        transform: translateY(-50%);
+        width: 100%;
+      }
     }
     &__name {
       width: 100%;
-      margin: 0 auto 50px;
+      margin: 0 auto 20px;
+      @include mq-min(md){
+        margin-bottom: 50px;
+      }
     }
     &__line {
-      width: 180px;
+      width: 30%;
       margin: 0 auto;
+      @include mq-min(md){
+        width: 180px;
+      }
     }
   }
 
@@ -265,8 +288,15 @@ img {
 
   /* about 自己紹介 */
   &-about {
-    margin-top: 200px;
-    margin-bottom: 200px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    @include mq-min(md){
+      margin-bottom: 160px;
+    }
+    @include mq-min(lg){
+      margin-top: 200px;
+      margin-bottom: 200px;
+    }
     &__title {
       @extend %title;
     }
@@ -274,72 +304,110 @@ img {
       position: relative;
     }
     &__image {
-      width: 100%;
+      width: 30%;
       max-width: 300px;
       position: absolute;
       z-index: 1;
-      box-shadow: 4px 4px 8px rgba(#000, .3);
+      @include mq-min(md){
+        width: 30%;
+        box-shadow: 4px 4px 8px rgba(#000, .3);
+      }
+      @include mq-min(lg){
+        width: 100%;
+      }
     }
     &__profile {
       position: relative;
-      width: calc(100% - 200px);
+      width: 100%;
       max-width: 1000px;
       background-color: $color-main;
-      top: 70px;
-      left: 200px;
-      padding: 50px 70px 50px 150px;
+      // top: 70px;
+      // left: 200px;
+      padding: 15px;
       box-sizing: border-box;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       color: $color-white;
+      @include mq-min(md){
+        padding: 50px 25px 50px 140px;
+        top: 70px;
+        left: 100px;
+        width: calc(100% - 100px);
+      }
+      @include mq-min(lg){
+        padding: 50px 50px 50px 150px;
+        left: 200px;
+        width: calc(100% - 200px);
+      }
     }
     &__name {
-      font-size: 3.2rem;
+      font-size: 2rem;
       line-height: 1;
-      // letter-spacing: em;
-      // text-indent: em;
       text-align: justify;
       text-justify: inter-ideograph;
       font-weight: normal;
       font-style: normal;
       font-family: $_font-en;
       margin-bottom: 40px;
+      @include mq-min(md){
+        font-size: 2.4rem;
+      }
+      @include mq-min(lg){
+        font-size: 3.2rem;
+      }
       span {
-        font-size: 2rem;
-        // line-height: ;
-        // letter-spacing: em;
-        // text-indent: em;
+        font-size: 1.6rem;
         text-align: justify;
         text-justify: inter-ideograph;
         font-weight: normal;
         font-style: normal;
         font-family: $_font-ja;
         vertical-align: top;
+        @include mq-min(lg){
+          font-size: 2rem;
+        }
       }
     }
     &__snslist {
       display: flex;
     }
     &__snsitem {
-      width: 46px;
-      margin-right: 20px;
+      width: 20px;
+      margin-right: 15px;
       &:last-of-type {
         margin-right: 0;
+      }
+      @include mq-min(md){
+        width: 36px;
+        margin-right: 20px;
+      }
+      @include mq-min(lg){
+        width: 46px;
       }
     }
     &__text {
       width: 100%;
+      font-size: 1.4rem;
       margin-bottom: 20px;
       &:last-of-type {
         margin-bottom: 0;
+      }
+      @include mq-min(lg){
+        font-size: 1.6rem;
       }
     }
   }
 
   /* skills できること */
   &-skills {
-    margin-bottom: 200px;
+    margin-bottom: 80px;
+    @include mq-min(md){
+      margin-bottom: 100px;
+    }
+    @include mq-min(lg){
+      margin-bottom: 200px;
+    }
     &__title {
       @extend %title;
     }
@@ -400,12 +468,22 @@ img {
     &__text {
       width: 100%;
       position: relative;
+      font-size: 1.4rem;
+      @include mq-min(lg){
+        font-size: 1.6rem;
+      }
     }
   }
 
   /* works 制作一覧 */
   &-works {
-    margin-bottom: 200px;
+    margin-bottom: 80px;
+    @include mq-min(md){
+      margin-bottom: 100px;
+    }
+    @include mq-min(lg){
+      margin-bottom: 200px;
+    }
     &__title {
       @extend %title;
     }
@@ -505,7 +583,13 @@ img {
 
   /* contact お問合わせ */
   &-contact {
-    margin-bottom: 200px;
+    margin-bottom: 80px;
+    @include mq-min(md){
+      margin-bottom: 100px;
+    }
+    @include mq-min(lg){
+      margin-bottom: 200px;
+    }
     &__title {
       @extend %title;
     }
