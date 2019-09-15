@@ -137,31 +137,128 @@ img {
 .header {
   position: fixed;
   width: 100%;
-  background-color: #fff;
   z-index: 9999;
+}
+
+@media screen and (min-width: 1024px), print {
+  .header {
+    background-color: #fff;
+  }
 }
 
 .header-nav {
   width: calc(100% - 30px);
   max-width: 1200px;
-  margin: 40px auto 36px;
+  margin: 20px auto;
+}
+
+@media screen and (min-width: 1024px), print {
+  .header-nav {
+    margin: 40px auto 36px;
+  }
 }
 
 .header-nav__drawer {
-  display: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+
+@media screen and (min-width: 1024px), print {
+  .header-nav__drawer {
+    display: none;
+  }
+}
+
+.header-nav__toggle {
+  display: block;
+  z-index: 101;
+  cursor: pointer;
+  transition: ease .5s;
+  /* open時設定 */
+}
+
+.header-nav__toggle_icon {
+  position: relative;
+  display: block;
+  height: 4px;
+  width: 28px;
+  background: #e55258;
+  -webkit-transition: ease .5s;
+  transition: ease .5s;
+}
+
+.header-nav__toggle_icon:nth-child(1) {
+  top: 0;
+}
+
+.header-nav__toggle_icon:nth-child(2) {
+  margin: 5px 0;
+}
+
+.header-nav__toggle_icon:nth-child(3) {
+  top: 0;
+}
+
+@media screen and (min-width: 1024px), print {
+  .header-nav__toggle {
+    display: none;
+  }
+}
+
+.header-nav__toggle.open .header-nav__toggle_icon:nth-child(1) {
+  top: 9px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.header-nav__toggle.open .header-nav__toggle_icon:nth-child(2) {
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
+.header-nav__toggle.open .header-nav__toggle_icon:nth-child(3) {
+  top: -9px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 .header-nav__list {
-  display: flex;
-  justify-content: flex-end;
+  display: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  margin: 0;
+  padding: 70px 0 0;
+  text-align: center;
+}
+
+@media screen and (min-width: 1024px), print {
+  .header-nav__list {
+    display: flex;
+    justify-content: flex-end;
+    text-align: left;
+  }
 }
 
 .header-nav__item {
-  margin-right: 20px;
+  font-size: 1.4rem;
+  margin-bottom: 30px;
 }
 
-.header-nav__item:last-of-type {
-  margin-right: 0;
+@media screen and (min-width: 1024px), print {
+  .header-nav__item {
+    margin-right: 20px;
+  }
+  .header-nav__item:last-of-type {
+    margin-right: 0;
+  }
 }
 
 /* main
@@ -502,7 +599,7 @@ img {
 }
 
 .main-contact__head {
-  display: block;
+  display: inline-block;
   margin-bottom: 5px;
 }
 
