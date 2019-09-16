@@ -304,30 +304,51 @@ img {
       position: relative;
     }
     &__image {
-      width: 30%;
-      max-width: 300px;
-      position: absolute;
-      z-index: 1;
+      width: calc(35% - 20px);
+      margin-right: 20px;
+      max-width: 100px;
+      margin-bottom: 20px;
+      // position: absolute;
+      // z-index: 1;
       @include mq-min(md){
-        width: 30%;
-        box-shadow: 4px 4px 8px rgba(#000, .3);
+        display: none;
       }
-      @include mq-min(lg){
-        width: 100%;
+      &_md {
+        display: none;
+        @include mq-min(md){
+          display: block;
+          position: absolute;
+          z-index: 1;
+          width: 100%;
+          max-width: 220px;
+          box-shadow: 4px 4px 8px rgba(#000, .3);
+        }
+        @include mq-min(lg){
+          max-width: 300px;
+        }
       }
+      // @include mq-min(md){
+      //   display: block;
+      //   position: absolute;
+      //   z-index: 1;
+      //   width: 100%;
+      //   max-width: 220px;
+      //   box-shadow: 4px 4px 8px rgba(#000, .3);
+      // }
+      // @include mq-min(lg){
+      //   max-width: 300px;
+      // }
     }
     &__profile {
       position: relative;
       width: 100%;
       max-width: 1000px;
       background-color: $color-main;
-      // top: 70px;
-      // left: 200px;
       padding: 15px;
       box-sizing: border-box;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      // justify-content: space-between;
       color: $color-white;
       @include mq-min(md){
         padding: 50px 25px 50px 140px;
@@ -341,6 +362,16 @@ img {
         width: calc(100% - 200px);
       }
     }
+    &__wrap {
+      width: calc(70% - 20px);
+      margin-bottom: 20px;
+      @include mq-min(md){
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 0;
+      }
+    }
     &__name {
       font-size: 2rem;
       line-height: 1;
@@ -349,21 +380,25 @@ img {
       font-weight: normal;
       font-style: normal;
       font-family: $_font-en;
-      margin-bottom: 40px;
+      margin-bottom: 10px;
       @include mq-min(md){
         font-size: 2.4rem;
+        margin-bottom: 40px;
       }
       @include mq-min(lg){
         font-size: 3.2rem;
       }
       span {
-        font-size: 1.6rem;
+        font-size: 1.3rem;
         text-align: justify;
         text-justify: inter-ideograph;
         font-weight: normal;
         font-style: normal;
         font-family: $_font-ja;
         vertical-align: top;
+        @include mq-min(md){
+          font-size: 1.6rem;
+        }
         @include mq-min(lg){
           font-size: 2rem;
         }
