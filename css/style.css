@@ -259,19 +259,31 @@ img {
 .header-nav__item {
   font-size: 1.4rem;
   margin-bottom: 30px;
+  position: relative;
 }
 
 @media screen and (min-width: 1024px), print {
   .header-nav__item {
     margin-right: 20px;
     margin-bottom: 0;
-    transition: opacity .3s;
   }
   .header-nav__item:last-of-type {
     margin-right: 0;
   }
-  .header-nav__item:hover {
-    opacity: .6;
+  .header-nav__item::after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e55258;
+    opacity: 0;
+    transition: opacity .5s;
+  }
+  .header-nav__item:hover::after {
+    opacity: 1;
   }
 }
 
@@ -477,12 +489,6 @@ img {
   }
 }
 
-@media screen and (min-width: 1024px), print {
-  .main-about__name span {
-    font-size: 2rem;
-  }
-}
-
 .main-about__snslist {
   display: flex;
 }
@@ -616,6 +622,7 @@ img {
   text-align: center;
   vertical-align: middle;
   width: 50%;
+  font-family: "Lato", "Helvetica", "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, sans-serif;
 }
 
 @media screen and (min-width: 768px), print {
@@ -878,6 +885,15 @@ img {
   border-radius: 5px;
   margin: 0 auto;
   cursor: pointer;
+}
+
+@media screen and (min-width: 1024px), print {
+  .main-contact__btn {
+    transition: opacity .5s;
+  }
+  .main-contact__btn:hover {
+    opacity: .7;
+  }
 }
 
 .main-contact input:focus,

@@ -226,15 +226,30 @@ img {
     &__item {
       font-size: 1.4rem;
       margin-bottom: 30px;
+      position: relative;
       @include mq-min(lg){
         margin-right: 20px;
         margin-bottom: 0;
-        transition: opacity .3s;
+        // transition: opacity .3s;
         &:last-of-type {
           margin-right: 0;
         }
+        &::after {
+          content: "";
+          width: 100%;
+          height: 3px;
+          position: absolute;
+          bottom: -6px;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: $color-accent;
+          opacity: 0;
+          transition: opacity .5s;
+        }
         &:hover {
-          opacity: .6;
+          &::after {
+            opacity: 1;
+          }
         }
       }
     }
@@ -308,8 +323,6 @@ img {
       margin-right: 20px;
       max-width: 100px;
       margin-bottom: 20px;
-      // position: absolute;
-      // z-index: 1;
       @include mq-min(md){
         display: none;
       }
@@ -327,17 +340,6 @@ img {
           max-width: 300px;
         }
       }
-      // @include mq-min(md){
-      //   display: block;
-      //   position: absolute;
-      //   z-index: 1;
-      //   width: 100%;
-      //   max-width: 220px;
-      //   box-shadow: 4px 4px 8px rgba(#000, .3);
-      // }
-      // @include mq-min(lg){
-      //   max-width: 300px;
-      // }
     }
     &__profile {
       position: relative;
@@ -348,7 +350,6 @@ img {
       box-sizing: border-box;
       display: flex;
       flex-wrap: wrap;
-      // justify-content: space-between;
       color: $color-white;
       @include mq-min(md){
         padding: 50px 25px 50px 140px;
@@ -398,9 +399,6 @@ img {
         vertical-align: top;
         @include mq-min(md){
           font-size: 1.6rem;
-        }
-        @include mq-min(lg){
-          font-size: 2rem;
         }
       }
     }
@@ -504,6 +502,7 @@ img {
       text-align: center;
       vertical-align: middle;
       width: 50%;
+      font-family: $_font-en;
       @include mq-min(md){
         width: 60%;
       }
@@ -724,6 +723,12 @@ img {
       border-radius: 5px;
       margin: 0 auto;
       cursor: pointer;
+      @include mq-min(lg){
+        transition: opacity .5s;
+        &:hover {
+          opacity: .7;
+        }
+      }
     }
     input:focus,
     textarea:focus{
