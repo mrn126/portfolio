@@ -542,7 +542,7 @@ img {
 }
 
 .main-skills__block {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 @media screen and (min-width: 768px), print {
@@ -559,7 +559,9 @@ img {
 .main-skills__box {
   width: 100%;
   background-color: #e3b6a1;
-  padding: 30px 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
 }
 
 @media screen and (min-width: 768px), print {
@@ -567,14 +569,39 @@ img {
     max-width: calc(40% - 15px);
     flex-basis: calc(40% - 15px);
     margin-right: 30px;
+    margin-bottom: 0;
+  }
+  .main-skills__block:nth-of-type(2n) .main-skills__box {
+    order: 2;
+    margin-right: 0;
+    margin-left: 30px;
+  }
+}
+
+@media screen and (min-width: 1024px), print {
+  .main-skills__box {
+    padding: 30px 15px;
+  }
+  .main-skills__block:nth-of-type(2n) .main-skills__box {
+    order: 1;
+    margin-right: 30px;
+    margin-left: 0;
   }
 }
 
 .main-skills__table {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   color: #fff;
   height: 150px;
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 1024px), print {
+  .main-skills__table {
+    width: 80%;
+    font-size: 1.6rem;
+  }
 }
 
 .main-skills__list {
@@ -588,7 +615,19 @@ img {
 .main-skills__item {
   text-align: center;
   vertical-align: middle;
-  width: 180px;
+  width: 50%;
+}
+
+@media screen and (min-width: 768px), print {
+  .main-skills__item {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 1024px), print {
+  .main-skills__item {
+    width: 180px;
+  }
 }
 
 .main-skills__level {
@@ -605,11 +644,27 @@ img {
     max-width: 60%;
     flex-basis: 60%;
   }
+  .main-skills__block:nth-of-type(2n) .main-skills__wrap {
+    order: 1;
+  }
+}
+
+@media screen and (min-width: 1024px), print {
+  .main-skills__block:nth-of-type(2n) .main-skills__wrap {
+    order: 2;
+  }
 }
 
 .main-skills__icon {
+  display: none;
   width: 50px;
   margin-bottom: 15px;
+}
+
+@media screen and (min-width: 1024px), print {
+  .main-skills__icon {
+    display: block;
+  }
 }
 
 .main-skills__text {
@@ -649,7 +704,7 @@ img {
 }
 
 .main-works__item {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .main-works__item:last-of-type {
@@ -751,7 +806,13 @@ img {
 }
 
 .main-contact__wrap {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px), print {
+  .main-contact__wrap {
+    margin-bottom: 50px;
+  }
 }
 
 @media screen and (min-width: 1024px), print {
