@@ -299,7 +299,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 0 -15px;
+  margin: 0 -10px;
 }
 
 @media screen and (min-width: 768px), print {
@@ -310,13 +310,13 @@ img {
 
 .works-section__image {
   width: 100%;
-  margin: 0 15px 30px;
+  margin: 0 10px 30px;
 }
 
 .works-section__image_sp {
-  flex-basis: calc((100% / 4) - 30px);
-  max-width: calc((100% / 4) - 30px);
-  margin: 0 15px 50px;
+  flex-basis: calc((100% / 4) - 20px);
+  max-width: calc((100% / 4) - 20px);
+  margin: 0 10px 50px;
 }
 
 @media screen and (min-width: 768px), print {
@@ -770,6 +770,10 @@ img {
 @media screen and (min-width: 1024px), print {
   .main-about__snsitem {
     width: 46px;
+    transition: opacity .5s;
+  }
+  .main-about__snsitem:hover {
+    opacity: .7;
   }
 }
 

@@ -302,6 +302,10 @@
       }
       @include mq-min(lg){
         width: 46px;
+        transition: opacity .5s;
+        &:hover {
+          opacity: .7;
+        }
       }
     }
     &__text {
