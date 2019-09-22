@@ -18,58 +18,7 @@
       }
     }
     &__back {
-      display: inline-block;
-      position: relative;
-      padding-left: 20px;
-      font-size: 1.2rem;
-      &::before,
-      &::after {
-        content: "";
-        display: block;
-        position: absolute;
-        background: $color-accent;
-        backface-visibility: hidden;
-        transition: all .5s;
-      }
-      &::before {
-        width: 100%;
-        height: 1px;
-        bottom: -2px;
-        left: 0;
-        z-index: 1;
-      }
-      &::after {
-        width: 1px;
-        height: 8px;
-        bottom: -3px;
-        left: 2px;
-        transform: rotate(45deg);
-      }
-      @include mq-min(lg){
-        padding-left: 30px;
-        font-size: 1.6rem;
-        &::before,
-        &::after {
-          transition: all .5s;
-        }
-        &::before {
-          bottom: -5px;
-        }
-        &::after {
-          height: 10px;
-          bottom: -6px;
-          left: 3px;
-        }
-        &:hover {
-          &::before {
-            width: 105%;
-            left: -5%;
-          }
-          &::after {
-            left: calc(3px - 5%);
-          }
-        }
-      }
+      @extend %arrowLink;
     }
   }
 
@@ -162,6 +111,51 @@
         &_pc {
           margin-bottom: 100px;
         }
+      }
+    }
+  }
+
+  &-lower {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto 50px;
+    @include mq-min(lg){
+      margin-bottom: 100px;
+    }
+    &__link {
+      &_prev {
+        @extend %arrowLink;
+      }
+      &_next {
+        @extend %arrowLink;
+        padding-left: 0;
+        padding-right: 20px;
+        &::after {
+          left: inherit;
+          right: 2px;
+          transform: rotate(-45deg);
+        }
+        @include mq-min(lg){
+          padding-left: 0;
+          padding-right: 30px;
+          &::after {
+            left: inherit;
+            right: 3px;
+          }
+          &:hover {
+            &::before {
+              left: 0;
+            }
+            &::after {
+              left: inherit;
+              right: calc(3px - 5%);
+            }
+          }
+        }
+      }
+      &_disable {
+        opacity: .6;
+        pointer-events: none;
       }
     }
   }
