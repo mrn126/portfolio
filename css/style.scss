@@ -89,7 +89,7 @@
       left: 0;
       z-index: 100;
       margin: 0;
-      padding: 70px 0 0;
+      padding: 70px 0 40px;
       text-align: center;
       @include mq-min(lg){
         display: flex;
@@ -97,6 +97,9 @@
         width: 100%;
         position: relative;
         padding: 0;
+      }
+      &.menu-pc {
+        display: flex!important;
       }
     }
     &__item {
@@ -141,6 +144,10 @@
     width: 100%;
     height: 100vh;
     position: relative;
+    margin-bottom: 80px;
+    @include mq-min(lg){
+      margin-bottom: 200px;
+    }
     &__logo {
       position: absolute;
       top: 50%;
@@ -179,14 +186,16 @@
 
   /* about 自己紹介 */
   &-about {
-    margin-top: 80px;
+    padding-top: 60px;
+    margin-top: -60px;
     margin-bottom: 80px;
     @include mq-min(md){
       margin-bottom: 160px;
     }
     @include mq-min(lg){
-      margin-top: 200px;
-      margin-bottom: 200px;
+      padding-top: 100px;
+      margin-top: -100px;
+      margin-bottom: 230px;
     }
     &__title {
       @extend %title;
@@ -310,11 +319,15 @@
 
   /* skills できること */
   &-skills {
+    padding-top: 60px;
+    margin-top: -60px;
     margin-bottom: 80px;
     @include mq-min(md){
       margin-bottom: 100px;
     }
     @include mq-min(lg){
+      padding-top: 100px;
+      margin-top: -100px;
       margin-bottom: 200px;
     }
     $cc: &;
@@ -425,11 +438,15 @@
 
   /* works 制作一覧 */
   &-works {
+    padding-top: 60px;
+    margin-top: -60px;
     margin-bottom: 80px;
     @include mq-min(md){
       margin-bottom: 100px;
     }
     @include mq-min(lg){
+      padding-top: 100px;
+      margin-top: -100px;
       margin-bottom: 200px;
     }
     &__title {
@@ -531,11 +548,15 @@
 
   /* contact お問合わせ */
   &-contact {
+    padding-top: 60px;
+    margin-top: -60px;
     margin-bottom: 80px;
     @include mq-min(md){
       margin-bottom: 100px;
     }
     @include mq-min(lg){
+      padding-top: 100px;
+      margin-top: -100px;
       margin-bottom: 200px;
     }
     &__title {
