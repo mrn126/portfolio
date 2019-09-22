@@ -94,6 +94,15 @@
     &__title {
       @extend %title;
       margin: 0 auto 20px;
+      &_en {
+        font-family: $_font-en;
+      }
+      &_icon {
+        font-size: 1.4rem;
+        @include mq-min(lg){
+          font-size: 2rem;
+        }
+      }
     }
     &__skill {
       font-size: 1.6rem;

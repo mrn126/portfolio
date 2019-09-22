@@ -20,6 +20,7 @@
 .works-section__title, .main-about__title, .main-skills__title, .main-works__title, .main-contact__title {
   font-size: 2.4rem;
   text-align: center;
+  font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, typesquare, sans-serif;
   margin-bottom: 40px;
 }
 
@@ -239,6 +240,20 @@ img {
 
 .works-section__title {
   margin: 0 auto 20px;
+}
+
+.works-section__title_en {
+  font-family: "Lato", "Helvetica", "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, sans-serif;
+}
+
+.works-section__title_icon {
+  font-size: 1.4rem;
+}
+
+@media screen and (min-width: 1024px), print {
+  .works-section__title_icon {
+    font-size: 2rem;
+  }
 }
 
 .works-section__skill {
