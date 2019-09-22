@@ -51,11 +51,9 @@
       transition: all .5s;
     }
     &::before {
-      bottom: -5px;
     }
     &::after {
       height: 10px;
-      bottom: -6px;
       left: 3px;
     }
     &:hover {

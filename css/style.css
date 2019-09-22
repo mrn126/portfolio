@@ -71,12 +71,8 @@
   .works-header__back::before, .works-lower__link_prev::before, .works-lower__link_next::before, .works-header__back::after, .works-lower__link_prev::after, .works-lower__link_next::after {
     transition: all .5s;
   }
-  .works-header__back::before, .works-lower__link_prev::before, .works-lower__link_next::before {
-    bottom: -5px;
-  }
   .works-header__back::after, .works-lower__link_prev::after, .works-lower__link_next::after {
     height: 10px;
-    bottom: -6px;
     left: 3px;
   }
   .works-header__back:hover::before, .works-lower__link_prev:hover::before, .works-lower__link_next:hover::before {
@@ -254,6 +250,10 @@ img {
   .works-section__title_icon {
     font-size: 2rem;
   }
+}
+
+.works-section__title a {
+  display: inline-block;
 }
 
 .works-section__skill {
