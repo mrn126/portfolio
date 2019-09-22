@@ -968,6 +968,29 @@ img {
   }
 }
 
+.main-works__title {
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 1024px), print {
+  .main-works__title {
+    margin-bottom: 40px;
+  }
+}
+
+.main-works__text {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 1024px), print {
+  .main-works__text {
+    font-size: 1.6rem;
+    margin-bottom: 80px;
+  }
+}
+
 @media screen and (min-width: 768px), print {
   .main-works__list {
     display: flex;
