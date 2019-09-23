@@ -163,29 +163,30 @@
     <!-- contact お問合わせ -->
     <section id="contact" class="main-contact">
       <h2 class="main-contact__title inview-fade">お問合わせ</h2>
-      <form action="">
+      <form action="https://docs.google.com/forms/d/e/1FAIpQLSfA9jKh1JqjBkiTmJUY9KydF1y6iInNg-iFJg7vJXW8IVblAA/formResponse" method="post" name="myForm" target="dummyIframe">
         <div class="main-contact__wrap">
           <div class="main-contact__block">
             <div class="main-contact__item inview-fade">
               <label for="name" class="main-contact__head">お名前</label>
-              <input id="name" type="text" name="name" class="main-contact__form main-contact__form_name" placeholder="お名前" required>
+              <input name="entry.478138996" id="name" type="text" class="main-contact__form main-contact__form_name" placeholder="お名前" required>
             </div>
             <div class="main-contact__item inview-fade">
               <label for="mail" class="main-contact__head">メールアドレス</label>
-              <input id="mail" type="email" name="mail" class="main-contact__form main-contact__form_mail" placeholder="sample@gmail.com">
+              <input name="emailAddress" id="mail" type="email" class="main-contact__form main-contact__form_mail" placeholder="sample@gmail.com">
             </div>
           </div>
           <div class="main-contact__block">
             <div class="main-contact__item inview-fade">
               <label for="message" class="main-contact__head">メッセージ</label>
-              <textarea id="message" name="message" class="main-contact__form main-contact__form_message"></textarea>
+              <textarea name="entry.2034297287" id="message" class="main-contact__form main-contact__form_message"></textarea>
             </div>
           </div>
         </div>
         <p class="main-contact-btnarea inview-fade">
-          <input type="submit" class="main-contact__btn" value="送信">
+          <input type="submit" id="submit" class="main-contact__btn" value="送信">
         </p>
       </form>
+      <iframe name="dummyIframe" style="display:none;" onload="showMessage()"></iframe>
     </section>
 
   </div><!-- /inner end -->
@@ -197,6 +198,15 @@
 </footer>
 
 </div><!-- /wrapper end -->
+
+<script>
+function showMessage() {
+    document.getElementById('name').value = "";
+    document.getElementById('mail').value = "";
+    document.getElementById('message').value = "";
+    document.getElementById('submit').value = "お問い合わせありがとうございました";
+}
+</script>
 
 </body>
 </html>
