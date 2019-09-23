@@ -16,16 +16,21 @@
     // background-color: $color-white;
   }
   &-bg {
-    display: none;
+    display: block;
+    width: 140px;
+    height: 140px;
+    position: absolute;
+    top: -70px;
+    right: -70px;
+    transform: rotate(45deg);
+    transform-origin: center center;
+    background-color: $color-white;
     @include mq-min(lg){
-      display: block;
       width: 130vw;
       height: 330px;
-      position: absolute;
       top: -230px;
+      right: initial;
       transform: rotate(15deg);
-      transform-origin: center center;
-      background-color: $color-white;
     }
     &.bgnone {
       opacity: .6;
@@ -98,7 +103,7 @@
     }
     &__list {
       display: none;
-      background-color: rgba($color-white, 0.8);
+      background-color: $color-white;
       width: 100vw;
       position: fixed;
       top: 0;
@@ -204,7 +209,6 @@
       span {
         position: absolute;
         top: 0;
-        // right: 5px;
         left: 50%;
         width: 24px;
         height: 24px;
@@ -394,6 +398,9 @@
     &__text {
       width: 100%;
       font-size: 1.4rem;
+      text-align: justify;
+      text-justify: inter-ideograph;
+      font-feature-settings: "palt";
       margin-bottom: 20px;
       &:last-of-type {
         margin-bottom: 0;
@@ -517,6 +524,9 @@
       width: 100%;
       position: relative;
       font-size: 1.4rem;
+      text-align: justify;
+      text-justify: inter-ideograph;
+      font-feature-settings: "palt";
       @include mq-min(lg){
         font-size: 1.6rem;
       }

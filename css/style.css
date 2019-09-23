@@ -277,7 +277,9 @@ img {
 
 .works-section__text {
   font-size: 1.4rem;
-  text-align: left;
+  text-align: justify;
+  text-justify: inter-ideograph;
+  font-feature-settings: "palt";
   margin: 0 auto 30px;
 }
 
@@ -285,13 +287,18 @@ img {
   .works-section__text {
     font-size: 1.6rem;
     margin-bottom: 50px;
-    width: 80%;
+    width: 90%;
   }
 }
 
 @media screen and (min-width: 1024px), print {
   .works-section__text {
-    margin-bottom: 100px;
+    width: initial;
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 15px 100px;
   }
 }
 
@@ -393,19 +400,24 @@ img {
 }
 
 .header-bg {
-  display: none;
+  display: block;
+  width: 140px;
+  height: 140px;
+  position: absolute;
+  top: -70px;
+  right: -70px;
+  transform: rotate(45deg);
+  transform-origin: center center;
+  background-color: #fff;
 }
 
 @media screen and (min-width: 1024px), print {
   .header-bg {
-    display: block;
     width: 130vw;
     height: 330px;
-    position: absolute;
     top: -230px;
+    right: initial;
     transform: rotate(15deg);
-    transform-origin: center center;
-    background-color: #fff;
   }
 }
 
@@ -495,7 +507,7 @@ img {
 
 .header-nav__list {
   display: none;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: #fff;
   width: 100vw;
   position: fixed;
   top: 0;
@@ -871,6 +883,9 @@ img {
 .main-about__text {
   width: 100%;
   font-size: 1.4rem;
+  text-align: justify;
+  text-justify: inter-ideograph;
+  font-feature-settings: "palt";
   margin-bottom: 20px;
 }
 
@@ -1035,6 +1050,9 @@ img {
   width: 100%;
   position: relative;
   font-size: 1.4rem;
+  text-align: justify;
+  text-justify: inter-ideograph;
+  font-feature-settings: "palt";
 }
 
 @media screen and (min-width: 1024px), print {

@@ -70,15 +70,24 @@
     }
     &__text {
       font-size: 1.4rem;
-      text-align: left;
+      text-align: justify;
+      text-justify: inter-ideograph;
+      font-feature-settings: "palt";
       margin: 0 auto 30px;
       @include mq-min(md){
         font-size: 1.6rem;
         margin-bottom: 50px;
-        width: 80%;
+        width: 90%;
       }
       @include mq-min(lg){
-        margin-bottom: 100px;
+        // width: 80%;
+        // margin-bottom: 100px;
+        width: initial;
+        display: inline-block;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0 15px 100px;
       }
     }
     &__block {
