@@ -13,7 +13,23 @@
   width: 100%;
   z-index: 9999;
   @include mq-min(lg){
-    background-color: $color-white;
+    // background-color: $color-white;
+  }
+  &-bg {
+    display: none;
+    @include mq-min(lg){
+      display: block;
+      width: 130vw;
+      height: 330px;
+      position: absolute;
+      top: -230px;
+      transform: rotate(15deg);
+      transform-origin: center center;
+      background-color: $color-white;
+    }
+    &.bgnone {
+      opacity: .6;
+    }
   }
   &-nav {
     width: calc(100% - 30px);
@@ -94,6 +110,7 @@
       @include mq-min(lg){
         display: flex;
         justify-content: flex-end;
+        background: transparent;
         width: 100%;
         position: relative;
         padding: 0;
@@ -174,6 +191,72 @@
       margin: 0 auto;
       @include mq-min(md){
         width: 180px;
+      }
+    }
+    &__scroll {
+      padding-top: 80px;
+      width: calc(100% - 30px);
+      max-width: 1200px;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      span {
+        position: absolute;
+        top: 0;
+        // right: 5px;
+        left: 50%;
+        width: 24px;
+        height: 24px;
+        margin-left: -12px;
+        border-left: 1px solid $color-accent;
+        border-bottom: 1px solid $color-accent;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-animation: sdb 2s infinite;
+        animation: sdb 2s infinite;
+        opacity: 0;
+        box-sizing: border-box;
+        &:nth-of-type(1) {
+          -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+        }
+        &:nth-of-type(2) {
+          top: 16px;
+          -webkit-animation-delay: .15s;
+          animation-delay: .15s;
+        }
+        &:nth-of-type(3) {
+          top: 32px;
+          -webkit-animation-delay: .3s;
+          animation-delay: .3s;
+        }
+        @include mq-min(lg){
+          left: initial;
+          right: 5px;
+        }
+        @-webkit-keyframes sdb {
+          0% {
+            opacity: 0;
+          }
+          50% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+          }
+        }
+        @keyframes sdb {
+          0% {
+            opacity: 0;
+          }
+          50% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+          }
+        }
       }
     }
   }

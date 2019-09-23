@@ -392,10 +392,25 @@ img {
   z-index: 9999;
 }
 
+.header-bg {
+  display: none;
+}
+
 @media screen and (min-width: 1024px), print {
-  .header {
+  .header-bg {
+    display: block;
+    width: 130vw;
+    height: 330px;
+    position: absolute;
+    top: -230px;
+    transform: rotate(15deg);
+    transform-origin: center center;
     background-color: #fff;
   }
+}
+
+.header-bg.bgnone {
+  opacity: .6;
 }
 
 .header-nav {
@@ -495,6 +510,7 @@ img {
   .header-nav__list {
     display: flex;
     justify-content: flex-end;
+    background: transparent;
     width: 100%;
     position: relative;
     padding: 0;
@@ -597,6 +613,81 @@ img {
 @media screen and (min-width: 768px), print {
   .main-hero__line {
     width: 180px;
+  }
+}
+
+.main-hero__scroll {
+  padding-top: 80px;
+  width: calc(100% - 30px);
+  max-width: 1200px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.main-hero__scroll span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #e55258;
+  border-bottom: 1px solid #e55258;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: sdb 2s infinite;
+  animation: sdb 2s infinite;
+  opacity: 0;
+  box-sizing: border-box;
+}
+
+.main-hero__scroll span:nth-of-type(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+
+.main-hero__scroll span:nth-of-type(2) {
+  top: 16px;
+  -webkit-animation-delay: .15s;
+  animation-delay: .15s;
+}
+
+.main-hero__scroll span:nth-of-type(3) {
+  top: 32px;
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+}
+
+@media screen and (min-width: 1024px), print {
+  .main-hero__scroll span {
+    left: initial;
+    right: 5px;
+  }
+}
+
+@-webkit-keyframes sdb {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes sdb {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 

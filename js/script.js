@@ -44,4 +44,20 @@ $(function(){
   $('.inview-fade').on('inview', function() {
       $(this).css("opacity", "1");
   });
+
+  // mainvisual以降でヘッダー背景透過
+  var $win = $(window),
+      $headerBg = $('.header-bg'),
+      $main = $('.main-inner'),
+      mainPos = $main.offset().top;
+
+  $win.on('load scroll', function() {
+    var value = $(this).scrollTop();
+    if ( value > mainPos ) {
+      $headerBg.addClass('bgnone');
+    } else {
+      $headerBg.removeClass('bgnone');
+    }
+  });
+
 });
