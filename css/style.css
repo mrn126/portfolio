@@ -321,9 +321,9 @@ img {
 }
 
 .works-section__image_sp {
-  flex-basis: calc((100% / 4) - 20px);
-  max-width: calc((100% / 4) - 20px);
-  margin: 0 10px 50px;
+  flex-basis: calc((100% / 2) - 30px);
+  max-width: calc((100% / 2) - 30px);
+  margin: 0 15px 50px;
 }
 
 @media screen and (min-width: 768px), print {
@@ -972,7 +972,7 @@ img {
   margin: 0 auto;
   color: #fff;
   height: 150px;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 @media screen and (min-width: 1024px), print {

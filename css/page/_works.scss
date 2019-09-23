@@ -102,9 +102,9 @@
       width: 100%;
       margin: 0 10px 30px;
       &_sp {
-        flex-basis: calc((100% / 4) - 20px);
-        max-width: calc((100% / 4) - 20px);
-        margin: 0 10px 50px;
+        flex-basis: calc((100% / 2) - 30px);
+        max-width: calc((100% / 2) - 30px);
+        margin: 0 15px 50px;
       }
       @include mq-min(md){
         &_pc {
